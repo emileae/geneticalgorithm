@@ -13,7 +13,7 @@ public class GeneticAlgorithm<T>
 	private Random random;
 	private float fitnessSum;
 
-	public GeneticAlgorithm(int populationSize, int dnaSize, Random random, Func<T> getRandomGene, Func<float, int> fitnessFunction,
+	public GeneticAlgorithm(int populationSize, int dnaSize, Random random, Func<T> getRandomGene, Func<int, float> fitnessFunction,
 		float mutationRate = 0.01f)
 	{
 		Generation = 1;
