@@ -8,5 +8,5 @@ Developed alongside a series of YouTube video tutorials.
 
 ### Videos ###
 
-* Part 1 - Implementation: https://www.youtube.com/watch?v=G8KJWONEeGo&index=1&list=PLm7W8dbdfloi6DOIQDqfTx0DjGwo6tGqm
-* Part 2 - Examples & Fitness Function: <in progress>
+* Part 1 - Implementation: https://www.youtube.com/watch?v=G8KJWONEeGo
+* Part 2 - Examples & Fitness Function: https://www.youtube.com/watch?v=OuP-nicgS_4
