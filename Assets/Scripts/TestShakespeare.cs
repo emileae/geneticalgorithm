@@ -72,7 +72,7 @@ public class TestShakespeare : MonoBehaviour
 
 		score /= targetString.Length;
 
-		score = (Mathf.Pow(5, score) - 1) / (5 - 1);
+		score = (Mathf.Pow(2, score) - 1) / (2 - 1);
 
 		return score;
 	}
