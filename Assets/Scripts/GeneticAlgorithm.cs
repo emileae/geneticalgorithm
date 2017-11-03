@@ -39,7 +39,7 @@ public class GeneticAlgorithm<T>
 		}
 	}
 
-	public void NewGeneration(int numNewDNA = 0)
+	public void NewGeneration(int numNewDNA = 0, bool crossoverNewDNA = false)
 	{
 		int finalCount = Population.Count + numNewDNA;
 
@@ -59,7 +59,7 @@ public class GeneticAlgorithm<T>
 			{
 				newPopulation.Add(Population[i]);
 			}
-			else if (i < Population.Count)
+			else if (i < Population.Count || crossoverNewDNA)
 			{
 				DNA<T> parent1 = ChooseParent();
 				DNA<T> parent2 = ChooseParent();
