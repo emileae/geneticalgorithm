@@ -83,7 +83,7 @@ public class GeneticAlgorithm<T>
 		Generation++;
 	}
 	
-	public int CompareDNA(DNA<T> a, DNA<T> b)
+	private int CompareDNA(DNA<T> a, DNA<T> b)
 	{
 		if (a.Fitness > b.Fitness) {
 			return -1;
@@ -94,7 +94,7 @@ public class GeneticAlgorithm<T>
 		}
 	}
 
-	public void CalculateFitness()
+	private void CalculateFitness()
 	{
 		fitnessSum = 0;
 		DNA<T> best = Population[0];
