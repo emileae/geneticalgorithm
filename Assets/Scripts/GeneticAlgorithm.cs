@@ -82,6 +82,39 @@ public class GeneticAlgorithm<T>
 
 		Generation++;
 	}
+
+	public void SaveGeneration(string filePath)
+	{
+		GeneticSaveData<T> save = new GeneticSaveData<T> {
+			Generation = Generation,
+			PopulationGenes = new List<T[]>(Population.Count),
+		};
+
+		for (int i = 0; i < Population.Count; i++)
+		{
+			save.PopulationGenes.Add(new T[dnaSize]);
+			Array.Copy(Population[i].Genes, save.PopulationGenes[i], dnaSize);
+		}
+
+		FileReadWrite.WriteToBinaryFile(filePath, save);
+	}
+
+	public bool LoadGeneration(string filePath)
+	{
+		if (!System.IO.File.Exists(filePath))
+			return false;
+
+		GeneticSaveData<T> save = FileReadWrite.ReadFromBinaryFile<GeneticSaveData<T>>(filePath);
+		Generation = save.Generation;
+		for (int i = 0; i < save.PopulationGenes.Count; i++)
+		{
+			if (i >= Population.Count) {
+				Population.Add(new DNA<T>(dnaSize, random, getRandomGene, fitnessFunction, shouldInitGenes: false));
+			}
+			Array.Copy(save.PopulationGenes[i], Population[i].Genes, dnaSize);
+		}
+		return true;
+	}
 	
 	private int CompareDNA(DNA<T> a, DNA<T> b)
 	{
